@@ -3,6 +3,7 @@ Test PDF documents by comparing them visually and textually to a known correct P
 
 # Usage
 ## Pixel by pixel comparison
+Outputs an array with fraction of matching pixels per page.
 ```
 const { visual, text }  = require("pdf_tester")
 
@@ -17,6 +18,7 @@ visual({
 ```
 
 ## Text content comparison
+Outputs a fraction of matching words (order matters!) and an array with the mismatched strings [[act, exp], [act, exp]]. 
 ```
 text({
     actual: "./test/actual/test_act_1.pdf",
@@ -28,12 +30,12 @@ text({
 //   match: 0.9996303825540566,
 //   misMatches: [
 //     [
-//       '220808_1143.ies03615.20.03.4020.0-90.0\nM3WS2007', 
-//       '220808_1143.ies03615.2-0.03.4020.0-90.0\nM3WS2007' 
+//       'example_1', 
+//       'example_2' 
 //     ],
 //     [
-//       '220808_1143.ies0-3615.20.0-3.4020.090.0\nM6WS2007',
-//       '220808_1143.ies0-3615.2-0.0-3.4020.090.0\nM6WS2007'
+//       'example_3',
+//       'example_4'
 //     ]
 //   ]
 // }
